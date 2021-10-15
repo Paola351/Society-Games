@@ -1,7 +1,5 @@
 package com.otacon.decks.french;
 
-import com.otacon.decks.italian.ItalianCard;
-
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
@@ -25,6 +23,7 @@ public class FrenchDeck {
         addType(CLUBS);
         addType(SPADES);
         addType(HEARTS);
+        addJokers();
     }
 
     public void shuffleDeck() {
@@ -45,9 +44,14 @@ public class FrenchDeck {
         }
     }
 
+    private void addJokers() {
+        cards.add(new FrenchCard(JOKER_RED, FrenchCard.Value.JOKER));
+        cards.add(new FrenchCard(JOKER_BLACK, FrenchCard.Value.JOKER));
+    }
+
     @Override
     public String toString() {
-        return "ItalianDeck{" +
+        return "FrenchDeck{" +
                 "cards=" + cards + "\n" +
                 "size=" + cards.size() + "\n" +
                 '}';
